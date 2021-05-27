@@ -1,0 +1,880 @@
+
+:root{
+    --default: #1d1d1d;
+    --black: #484848;
+    --violet: #69328e;
+    --pink: #f42267;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    min-width: 320px;
+    color: var(--default);
+
+    scroll-behaviour: smooth;
+}
+
+
+body.locked{
+    overflow: hidden;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+    padding: 6.25rem 0;
+}
+
+h3{
+    font-family: 'Palatino Linotype', sans-serif;
+    font-style: italic;
+    font-size: 42px;
+}
+h4{
+    font-weight: 600;
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+}
+
+
+
+/**-------Preloader-------------**/
+.mask{
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.6s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide{
+    opacity: 0;
+}
+
+.loader{
+    width: 75px;
+    height: 75px;
+    border: 10px solid rgba(222, 75, 136, 0.6);
+    border-radius: 50%;
+    border-left-color: rgba(222, 75, 136, 1);
+    animation: loader 1.3s linear infinite;
+}
+
+
+@keyframes loader{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/**---------Bootstrap selectors------------**/
+.btn{
+    color: #fff;
+    font-size: 0.9375rem‬;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+/**--------Scroll to top---------**/
+.scroll_top{
+    display: none;
+
+    position: fixed;
+    bottom: 3.75rem;
+    right: 3.125rem;
+    z-index: 900;
+
+    height: 3.125rem;
+    width: 3.125rem;
+    background-color: var(--pink);
+    border: 0;
+    border-radius: 4px;
+
+    color: #fff;
+    font-size: 2rem;
+
+    transition: all .3s;
+
+    cursor: pointer;
+}
+
+.scroll_top:hover{
+    background-color: #fff;
+    text-decoration: none;
+    outline: 0;
+    color: var(--pink);
+    border: 1px solid var(--pink);
+}
+
+.scroll_top.active{
+    display: block;
+}
+
+/**-------Header------------**/
+.header_main{
+    background: url('images/Intro/main.jpg') center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+}
+
+/*Nav*/
+
+.navbar.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    background: linear-gradient(45deg, rgba(255,0,32) 0%, rgba(68,26,130) 100%);
+}
+
+.navbar-brand, .navbar-nav a{
+    color: #fff;
+    font-weight: 600;
+}
+.navbar-brand{
+    font-size: 2.5625rem;
+}
+.navbar-brand:hover{
+    color: #fff;
+}
+.navbar-nav a{
+    font-size: 1.0625rem;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 1rem;
+}
+
+.navbar-nav a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 3px;
+    transform: scale(0);
+
+    transition: .2s linear;
+}
+.navbar-nav a:hover::after{
+    transform: scale(1);
+}
+
+.navbar-toggler{
+    color: #fff;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+/*Header text*/
+.header_text{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    z-index: 1;
+    max-width: 600px;
+    color: #fff;
+    padding: 1.25rem;
+}
+.header_text p{
+    margin-top: 1.875rem;
+}
+
+/*Header buttons*/
+.header_buttons{
+    padding-left: 1.875rem;
+}
+.header_buttons .btn{
+    height: 3.75rem;
+    padding: 0 2.5rem 0 2.5rem;
+    margin-top: 1.875rem;
+
+    transition: .2s linear;
+
+    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+}
+.btn-violet:hover{
+    color: #fff;
+    background: var(--violet);
+}
+.btn-pink:hover{
+    color: #fff;
+    background: var(--pink);
+}
+.btn-pink{
+    background: #f42267c9;
+}
+.btn-violet{
+    background: #69328ecf;
+}
+
+
+
+/**---------About------------**/
+.about{
+    background: url(images/About/world_map.png) no-repeat center;
+    background-size: cover;
+    color: var(--black);
+}
+
+
+/*Tabs*/
+.about .nav-pills{
+    margin-bottom: 1.25rem;
+}
+
+.about .nav-link{
+    color: var(--black);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    padding: 0.875rem 1.875rem;
+    background: none;
+}
+.about .nav-link.active{
+    background: var(--pink);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+
+    color: #fff;
+}
+
+
+.btn-shadow{
+    margin-top: 3rem;
+    background: var(--pink);
+
+    padding: 0.625rem 1.5625rem;
+    box-shadow:  0 6px 0 #ff5990;
+    border-radius: 0.625rem;
+
+    transition: .2s linear;
+}
+.btn-shadow:hover{
+    box-shadow:  0 10px 0 #ff5990;
+}
+
+
+
+
+/**---------Achievement------------**/
+.achievement{
+    padding: 0;
+
+    background: #4b2d7f;
+    color: #fff;
+    font-size: 0.9375rem;
+}
+
+.achievement_item{
+    padding: 5rem 0;
+    text-align: center;
+
+    transition: 0.3s linear;
+}
+
+.achievement_item:hover{
+    background: #40286a;
+}
+
+.achievement i{
+    font-size: 4.375rem;
+}
+
+.achievement_numb{
+    margin: 1.25rem 0 0;
+
+    font-weight: 600;
+    font-size: 3.125rem;
+}
+
+.achievement_title{
+    font-size: 1.5625rem;
+    font-weight: normal;
+    height: 4.5rem;
+    overflow: hidden;
+}
+
+.achievement_title span{
+    font-size: 1.875rem;
+    font-weight: 600;
+}
+
+.achievement_info{
+    margin-top: 1.25rem;
+
+    max-width: 20rem;
+    margin: 0 auto;
+}
+
+
+/**---------Story------------**/
+.story{
+    background: url(images/Story/letsgrow.jpg) no-repeat center;
+    background-size: cover;
+
+    text-align: center;
+    color: #fff;
+}
+
+.story_info{
+    margin: 0 auto;
+    max-width: 50rem;
+}
+
+.story .btn-shadow {
+    margin-top: 1.5rem;
+}
+
+
+/**---------Service------------**/
+.service i{
+    padding-left: 1rem;
+
+    font-size: 3.75rem;
+    background: linear-gradient(45deg, rgba(255,0,32,.7) 0%, rgba(68,26,130,.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service_kind{
+    font-size: 1.5625rem;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0.625rem 0;
+}
+
+.service_info{
+    font-size: 0.875rem;
+}
+
+iframe{
+    border-radius: 0.5rem;
+}
+
+
+
+/**-----------Work---------------**/
+
+/*Tabs*/
+.work{
+    background: #f1f1f1;
+}
+
+.work h4{
+    color: #333;
+}
+
+.work .nav-pills{
+    margin: 1rem 0 ;
+    justify-content: center;
+}
+
+.work .nav-link{
+    color: var(--black);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    padding: 0.875rem 1.875rem;
+    background: none;
+}
+.work .nav-link.active{
+    background: var(--pink);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+
+    color: #fff;
+}
+
+.work_gallery{
+    margin-top: 2.5rem;
+}
+
+.work_item{
+    margin-bottom: 1.25rem;
+}
+
+.work_item a img{
+    border-radius: 2%;
+    transition: all .3s;
+}
+
+.work_item:nth-child(3n) a img{
+    display: block;
+    margin: 0 auto 0 0;
+}
+
+.work_item:nth-child(3n-2) a img{
+    display: block;
+    margin: 0 0 0 auto;
+}
+
+.work_item a:hover img{
+    transform: scale(1.1);
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+/**------------------Clients-----------------**/
+.clients{
+   background: #4b2d7f;
+}
+
+
+.clients .clients_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clients_logo{
+    margin: 2rem 0;
+}
+
+
+
+/**--------Reviews----------**/
+.reviews{
+    padding-bottom: 0;
+
+    background: url(images/Reviews/reviews_bg.jpg) center no-repeat;
+    background-size: cover;
+
+    color: #fff;
+}
+
+
+.reviews blockquote, .reviews figcaption{
+    position: relative;
+    padding-left: 3.6rem;
+    margin-top: 3rem;
+    font-size: 1.375rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.reviews_raiting{
+    margin-top: 5rem;
+    padding-left: 3.6rem;
+    color: #f42267;
+    font-size: 1.5rem;
+}
+
+.reviews figcaption{
+    margin-top: 0;
+}
+
+.reviews blockquote::before{
+    content: '\201C';
+    position: absolute;
+    top: -4rem;
+    left: -1rem;
+
+    float: left;
+    font-size: 8.375rem;
+    font-style: italic;
+    color: #f42267;
+}
+
+
+
+/**---------Help------------**/
+.help{
+    background: url(images/Form/form_bg.jpg) center no-repeat;
+    background-size: cover;
+
+    color: #fff;
+}
+
+.help h5{
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.help .btn-shadow{
+    margin-top: 0;
+    background: var(--violet);
+
+    padding: 0.625rem 1.5625rem;
+    box-shadow:  0 6px 0 #a57ee9;
+    border-radius: 0.625rem;
+
+    transition: .2s linear;
+}
+.help .btn-shadow:hover{
+    color: #fff;
+    box-shadow:  0 10px 0 #a57ee9;
+}
+
+.help form{
+    text-align: left;
+}
+
+.help input{
+    padding: 0.8rem 1.5625rem;
+    background-color: #f66f9b;
+    color: #fff;
+    border: 0;
+}
+
+.help input:focus{
+    background-color: #f66f9b;
+    color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+
+.help input::placeholder{
+    color: #fff;
+}
+
+
+
+/**---------Footer------------**/
+.footer{
+    padding: 6.25rem 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: url(images/Footer/world_map.png) center no-repeat;
+    background-size: cover;
+}
+
+h5.footer_info{
+    font-size: 1.5625rem;
+    font-weight: 700;
+    color: #4b2d7f;
+}
+
+.footer_nav{
+    list-style: none;
+    font-size: 0.9375rem;
+    padding-left: 0.625rem;
+}
+
+.footer_nav a{
+    text-decoration: none;
+    color: #171717;
+}
+
+.footer_nav a:hover{
+    font-weight: 700;
+}
+
+.footer_images img{
+    margin-bottom: 1.25rem;
+    border-radius: 1rem;
+}
+
+
+/**---------Copyright------------**/
+.copyright{
+    background-color: #f6f6f6;
+    padding: 3.125rem;
+}
+
+.copyright .col-md-12 ul{
+    justify-content: center;
+}
+
+.copyright a, .copyright span{
+    font-family: 'Poppins', sans-serif;
+    color: #171717;
+    font-weight: 600;
+    position: relative;
+}
+
+.copyright a::before{
+    content: "\00B7";
+    position: absolute;
+    left: -5%;
+}
+
+
+
+
+/******************************/
+/**---------Media------------**/
+/******************************/
+
+@media(max-width: 991px){
+
+    section, .footer{
+        padding: 3.125rem 0;
+    }
+
+    .copyright{
+        padding: 1.5625rem 0;
+    }
+
+    /**---------Header------------**/
+    /*Nav*/
+    .header_main.active .container-fluid{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+
+        background-color: #4b2d7f;
+    }
+
+    .navbar-brand{
+        z-index: 5;
+    }
+    .navbar-toggler{
+        margin-left: auto;
+        z-index: 5;
+    }
+
+    .navbar-toggler.active .fa-bars:before {
+        content: "X";
+        font-family: monospace;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    .navbar-collapse{
+        flex: 0;
+        padding: 0;
+    }
+    .navbar-nav{
+        justify-content: center;
+        background: linear-gradient(45deg, #ed1b33cc 0%, #442e82c2 100%);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        padding: 0 1rem;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .nav-item{
+        text-align: center;
+    }
+    .nav-item:not(:last-child){
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    /*Header Text*/
+    .header_text{
+        background-color: rgba(0,0,0,.3);
+    }
+
+
+    /**-------About----------**/
+    .about div {
+        text-align: center;
+    }
+
+    .about ul {
+        justify-content: center;
+    }
+
+
+    /**------Service-----------**/
+    .service div{
+        text-align: center;
+    }
+
+
+    /**--------Reviews----------**/
+
+    .reviews blockquote, .reviews figcaption{
+        position: relative;
+        padding-left: 3rem;
+        margin-top: 3rem;
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    .reviews_raiting{
+        margin-top: 3rem;
+        padding-left: 3rem;
+        color: #f42267;
+        font-size: 1.5rem;
+    }
+
+    .reviews figcaption{
+        margin-top: 0;
+    }
+
+    .reviews blockquote::before{
+        content: '\201C';
+        position: absolute;
+        top: -3rem;
+        left: -0.7rem;
+
+        float: left;
+        font-size: 6.375rem;
+        font-style: italic;
+        color: #f42267;
+    }
+}
+
+
+@media(max-width: 768px){
+
+    h3,h4{
+        font-size: 1.875rem;
+    }
+
+     /**---------Header------------**/
+    .header_text{
+        left: 0;
+        margin: 0 20px;
+        max-width: 100%;
+    }
+
+
+    /**---------Achievement------------**/
+    .achievement_item{
+        padding: 2.5rem 0;
+    }
+
+
+    /**---------Section------------**/
+    section .btn-shadow{
+        margin: 0 0 2rem 0;
+    }
+
+
+
+     /**--------Reviews----------**/
+    .reviews [class^="col-"], figure{
+        text-align: center;
+    }
+
+    figure .blockquote{
+        margin: 0 auto;
+    }
+
+    .reviews blockquote, .reviews figcaption{
+        position: relative;
+        padding-left: 0;
+        margin-top: 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    .reviews_raiting{
+        margin-top: 2rem;
+        padding-left: 0;
+        color: #f42267;
+        font-size: 1.5rem;
+    }
+
+    .reviews figcaption{
+        margin-top: 0;
+    }
+
+    .reviews blockquote{
+        width: 20rem;
+
+    }
+    .reviews blockquote::before{
+        display: none;
+    }
+
+
+    /**--------Help----------**/
+    .help input, .help button.btn{
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .help form{
+        text-align: center;
+    }
+
+
+    /**--------Footer----------**/
+    .footer .col-6{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+}
+
+
+@media(max-width: 600px){
+     /**---------Header------------**/
+    .header_text{
+        top: 7.625rem;
+    }
+
+    /*Header buttons*/
+    .header_buttons .btn{
+        display: block;
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+}
+
+
+@media(max-width: 575px){
+    /**-------------Work------------------**/
+    .work_item:nth-child(3n) a img{
+        display: block;
+        margin: auto;
+    }
+
+    .work_item:nth-child(3n-2) a img{
+        display: block;
+        margin: auto;
+    }
+
+
+    /**-------------Clients----------------**/
+    .clients_logo{
+        margin: 4rem 0;
+    }
+}
+
+@media(max-width: 480px){
+
+    .about .nav-pills {
+        margin-bottom: 1.25rem;
+        justify-content: center;
+    }
+
+
+    .btn-shadow{
+        margin-top: 1rem;
+    }
+
+    .reviews blockquote{
+        width: 85%;
+
+    }
+}
+
+@media(max-width: 380px){
+    .header_main .navbar-brand{
+        font-size: 1.875rem;
+    }
+}
