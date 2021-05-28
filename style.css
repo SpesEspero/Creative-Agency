@@ -637,6 +637,10 @@ h5.footer_info{
         background-color: #4b2d7f;
     }
 
+    .header_buttons{
+        padding-left: 0;
+    }
+
     .navbar-brand{
         z-index: 5;
     }
@@ -646,9 +650,9 @@ h5.footer_info{
     }
 
     .navbar-toggler.active .fa-bars:before {
-        content: "X";
+        content: "x";
         font-family: monospace;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 2rem;
     }
 
